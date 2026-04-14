@@ -4,7 +4,6 @@
 
 using namespace std;
 
-// --- E1: FUNCIONES PARA MATRIZ (Aritmética de punteros) ---
 void calcularSumasFilas(int** matriz, int n, int m) {
     cout << "\n>>> Sumas por fila:" << endl;
     for (int i = 0; i < n; i++) {
@@ -38,7 +37,6 @@ int** transponer(int** matriz, int n, int m) {
     return t;
 }
 
-// --- E2: FUNCIONES PARA PUNTEROS A FUNCIÓN ---
 typedef double (*Operacion)(double);
 double cuadrado(double x) { return x * x; }
 double doble(double x) { return x * 2; }
@@ -48,7 +46,6 @@ void procesarArreglo(double* arr, int tam, Operacion op) {
     for (int i = 0; i < tam; i++) arr[i] = op(arr[i]);
 }
 
-// --- E3 & BONUS: LAMBDAS Y PIPELINE ---
 typedef function<double(double)> Transform;
 
 double ejecutarComposicion(double* arr, int tam, Transform trans, function<double(double, double)> combinar) {
@@ -65,7 +62,6 @@ void aplicarPipeline(double* arr, int tam, const vector<Transform>& pipe) {
     }
 }
 
-// --- PROGRAMA PRINCIPAL CON MENÚ CÍCLICO ---
 int main() {
     int opcion;
 
